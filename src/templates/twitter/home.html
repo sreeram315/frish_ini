@@ -1,0 +1,100 @@
+
+<style type="text/css">
+	.chik{
+		padding-left: 10%;
+		padding-right: 30%;
+
+	}
+	.hen{
+		display: ine;
+		text-align: right;
+		opacity: .6;
+		padding-right: 30px;
+	}
+	.new-tweet{
+		text-align: right;
+		align-content: right;
+		padding-right: 30px;
+		color: red;
+	}
+	.user-name{
+		display: inline;
+		opacity: 0.5;
+	}
+	.each-tweet{
+		display: inline;
+		
+		
+	}
+	.name{
+		display: inline;
+	}
+</style>
+
+{% extends 'base.html' %}
+
+{% block head_name %} Twitter || SRM {% endblock head_name %}
+
+
+{% block cont_ex %}<br/></br>
+<div class="new-tweet"><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newtweet">tweet</button>
+</div>
+{% if tweets %}
+<h1 style="padding-left: 30px; color: blue; color: red;">Latest tweets:</h1> 
+<br/></br><br/>
+{% include 'snippets/accounts/account-search-form.html' %}
+
+<div class = "chik" >
+	{% for tweet in tweets %}
+		<div class="each-tweet">
+			<div class="name">
+				<a href = "{% url 'account-profile' slug=tweet.user_link %}"><b> {{tweet.name}}</b></a>
+			 </div> | 
+			 <div class="user-name"> @{{tweet.username}} </div>
+			 <div class="hen" >{{tweet.date_time}}</div><br/>
+			
+			<div class="lead"> {{tweet.content}} </div><br/><hr/><br/><br/>
+		</div>
+
+
+	{% endfor %}
+	
+</div>
+
+{% else %}
+
+<div class="chik"> No tweets available. Please follow somone </div>
+{% include 'snippets/accounts/account-search-form.html' %}
+
+{% endif %}
+
+
+<!-- model -->
+
+<div class="modal fade" id="newtweet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New tweet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/twitter/new-tweet/" id="form-new-tweet">{% csrf_token %}
+          <div class="form-group">
+            <label for="message-text" class="col-form-label"></label>
+            <textarea class="form-control" id="message-text" rows="3" name="content" placeholder="Content" required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('form-new-tweet').submit()">Tweet</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end model  -->
+
+{% endblock %}

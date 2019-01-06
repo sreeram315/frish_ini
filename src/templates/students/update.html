@@ -1,0 +1,29 @@
+<style>
+.form_re{
+	padding-left: 30%;
+	padding-right: 30%;
+	padding-bottom: 5%;
+}
+.button_re:hover{
+}
+</style>
+
+
+{% extends 'base.html' %}
+
+<!-- header name  -->
+{% block head_name %}New Student Entry || SRM {% endblock head_name %}			
+{% load crispy_forms_tags %}
+
+
+{% block cont_ex %}<br/>
+
+<div class="form_re">
+		<form method="POST">{% csrf_token %}
+		{{form|crispy}}
+		<button type="submit" class="btn btn-primary button_re"> Update</button>
+	</form>
+</div>
+
+{% endblock cont_ex %}
+

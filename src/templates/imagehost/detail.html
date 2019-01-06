@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block head_name %} Imagehost || SRM {% endblock head_name %}
+{% block cont_ex %}
+
+<br/><br/><br/>
+<div style="text-align: center; ">
+	<div style="font-size: 24px">
+ Your image has been stored in our database <br/> and can now be accessed at: <br/>
+
+	<p><b><i><a href = "/data/{{object.image}}">	127.0.0.1:8000/data/{{ object.image }}	</a></i></b></p>
+</div>
+<p> Kindly note it</p>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+<h5 style="text-align: center;color: red">
+Thank you for using our service.
+</h5>
+
+
+{% endblock cont_ex %}

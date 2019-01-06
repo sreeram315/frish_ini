@@ -1,0 +1,618 @@
+
+
+
+<style type="text/css">
+	#popup_thing{
+		position: relative;
+	}
+	.view_likes{
+		cursor: pointer;
+	}
+	.reply-comment, .show_replies{
+		padding: 0;
+		border: none;
+		background: none;
+		cursor: pointer;
+		color: grey;
+	}
+	.img-responsive{
+		width: 100%;
+	}
+	.headline{
+		font-family: Times New Roman;
+		font-size: 42px;
+		color: #336699;
+		padding-left: 15%;
+		padding-right: 15%;
+
+	}
+	.date_time{
+		color: grey;
+		font-size: 20px;
+		text-align: right;
+		padding-right: 15%;
+	}
+	.content_re, .content{
+		padding-top: 43px;
+		padding-left: 15%;
+		padding-right: 15%;
+		padding-bottom: 5%;
+	    color: #353535;
+
+	}
+	
+	.image{
+		padding-top: 2%;
+		padding-left: 15%;
+		padding-right: 15%;
+		padding-bottom: 3%;
+		width: 100%;
+		max-height: 700px;
+	}
+	.user-{
+		text-align: left;
+		padding-left: 15%;
+		font-size: 28;
+	}
+	.small-grey{
+		display: inline;
+		font-size: 12;
+		opacity: 0.8;
+		color: red;
+	}
+	.comments{
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+	.each-comment{
+		margin: 25px;
+		padding: 10px;
+		border-radius: 5px;
+		font-family: Arial;
+		background-color: lightgrey;
+	}
+	.comment-user-name{
+		color: #336699;
+		font-family: Times New Roman;
+		font-size: 26px;
+	}
+	.button-like{
+		background-color: lightgrey;
+		border: 0px;
+		color: blue;
+
+	}
+	.button-like:hover{
+		cursor: pointer;
+	}
+	.text_input {
+	  width: 53%;
+	  padding: 12px 20px;
+	  margin: 6px 0;
+	  display: inline-block;
+	  border: 2px solid #ccc;
+	  border-radius: 10px;
+	  box-sizing: border-box;
+	}
+	.give-comment{
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+	.preview_points{
+		padding-left: 15%;
+		padding-right: 15%;
+		opacity: 0.8;
+		font-family: WildWest;
+		font-size: 22;
+	}
+	.content::first-letter{
+		padding-left: 3%;
+		font-size: 48;
+	}
+	.update{
+		text-align: right;
+		font-size: 14px;
+		padding-right: 15%;
+		font-family: arial;
+		color: red;
+	}
+	.updated_time{
+		color: grey;
+		font-size: 20px;
+		text-align: right;
+		padding-right: 15%;
+	}
+	.replies{
+		padding-left: 3%;
+	}
+	.each-reply{
+		background-color: #f4f4f4;
+		padding-left: 10px;
+		border-radius: 10px;
+
+	}
+	.reply-comment{
+		outline: none;
+		display: block;
+		border: 0;
+	}
+	#extra-replies-btn{
+		outline: none;
+		display: block;
+		border: 0;
+	}
+
+
+</style>
+
+
+
+
+{% extends 'base.html' %}
+{% load blog_filters %}
+{% load blog_filters %}
+{% load markdown_deux_tags %}
+
+{% block head_name %} Blog || SRM {% endblock head_name %}
+
+
+{% block extra %} {{form.media}}{% endblock extra %}
+
+
+{% block cont_ex %}
+<br/>
+
+<div class="headline">{{ object.headline }} </div>	<!-- headline -->
+
+<div>
+	<div class="date_time">{{ object.date_time }}</div>  <!-- datetime -->
+	<div class="updated_time"><small><u>Updated:</u> {{ object.last_updated.date }}</small></div>  <!-- datetime -->
+	<div class="user-">
+		By:<a href="{% url 'account-profile' slug=object.creater|users_slug %}"> {{object.creater|users_name|title}}</a>
+		<div class="small-grey"><a style="color: grey" href="/blog/?q={{object.creater}}"> more by the author</a></div>
+		{% if object.creater == request.user %}
+			<div class="update"><a href="{% url 'blog-update' slug=object.slug %}">Update</a></div>
+		{% endif %}									<!-- update -->
+	</div>
+</div>
+<br/>
+
+{% if object.preview_points|length > 2 %}
+	<div class="preview_points">								<!-- 	preview_points -->
+<ul>
+	{% for point in object.preview_points|split:"ent" %}
+		<li>{{point}}</li>
+	{% endfor %}
+</ul>
+	</div>
+{% endif %}
+
+
+
+{% if object.image %}<br/>
+<img src="/data/{{object.image}}" class="image">
+{% endif %}
+
+
+<div class="content_detail content lead">
+	{{object.marked_content}}		<!-- content -->
+</div>    
+
+
+{% if request.user.is_authenticated %}
+<div class="give-comment">								<!-- give comment -->
+	<div style="color: grey; font-size: 20;">
+		What do you think about this?
+	</div>
+	<form class="comment-give" method="POST" action="." data-url="{{request.build_absolute_uri}}">{% csrf_token %}
+		<textarea name="comment_content" class="text_input comment-field" rows="1" placeholder="Comment here..."></textarea><br/>
+		<button class="btn btn-outline-primary submit_comment" type="submit">Submit</button>
+	</form>
+</div>
+{% else %}
+<div class="give-comment">
+	<a href="{% url 'login' %}">Login</a> or <a href="{% url 'account-register' %}">Register</a> to comment
+</div>
+{% endif %}
+
+
+
+<div style="color: grey; font-size: 30; padding-left: 15%;">			<!-- comments -->
+	Comments
+</div>
+
+<div style="padding-left: 15%;padding-right: 15%"></div><br/>
+
+
+
+
+<div class="comments">
+
+	{% for comment in comments %}
+
+		<blockquote class="lead">
+			<p> {{comment.content|linebreaks}} </p>
+			<footer class="blockquote-footer">
+							<a href="{% url 'account-profile' slug=comment.creater|users_slug %}">
+							<!-- user name -->
+							{{comment.creater|users_name}}</a> | 
+
+							<!-- likes count -->
+							<span class="like-count-{{comment.slug}} view_likes" data-url="{{ comment.get_liked_users_url }}" data-toggle="popover" data-placement="top" data-trigger="click">{{ comment.likes.count }} </span>
+							<a class="like-commment-btn" {% if request.user in comment.likes.all %}
+									data-pre="1" 
+								{% else %}
+									data-pre="0" 
+								{% endif %} href="{{ comment.get_api_like_url }}" data-href="{{ comment.get_api_like_toggle }}" data-slug="{{comment.slug}}" data-like-count={{ comment.likes.count }} >
+							<span class="like-text-{{comment.slug}}">
+							{% if request.user in comment.likes.all %}
+								Unlike 
+							{% else %}
+								Like
+							{% endif %}
+							</span></a> | 
+
+							<!-- reply button -->
+							<button style="display: inline;" type="button" class="reply-comment" data-toggle="modal" data-parent="{{comment.slug}}" data-parentname="{{comment.creater|users_name}}" data-target="#exampleModal" data-whatever="@{{comment.creater}}"> Reply </button> |
+
+							<!-- timestamp  -->
+							{{comment.date_time.date}}({{comment.date_time|timesince}} ago)
+							{% if comment|reply_count %} |
+									{{comment|reply_count }}
+										{% if comment|reply_count > 1 %}
+												relpies
+										{% else %}
+												reply
+										{% endif %}
+							{% endif %}
+			</footer>
+		</blockquote>
+
+		 <!-- one comment -->
+		<!--  <div class="replies" id="show_replies_id_{{comment.slug}}_1">
+			{% for reply in comment.replies|slice:"1" %}
+				<div class="each-reply">
+					<blockquote class="lead">
+						<p> {{reply.content|linebreaks}} </p>
+								<footer class="blockquote-footer">
+
+									<a href="{% url 'account-profile' slug=reply.creater|users_slug %}">{{reply.creater|users_name}}</a> | 
+									<button style="display: inline;" type="button" class="comment-comment show_replies" data-toggle="modal" data-parent="{{reply.slug}}" data-target="#exampleModal" data-whatever="@{{reply.creater}}"> Reply </button> |
+									{{reply.date_time|timesince}} ago |
+									Replies: {{reply|reply_count}}
+									
+								</footer>
+					</blockquote>
+				</div>
+
+			{% endfor %}
+		</div> -->
+
+		<!-- end one comment -->
+
+				<div class="replies" id="show_replies_id_{{comment.slug}}_repliesall">
+					{% for reply in comment|get_comm_replies %}
+						<div class="each-reply">
+							<blockquote class="lead">
+								<p> {{reply.content|linebreaks}} </p>
+										<footer class="blockquote-footer">
+
+											<a href="{% url 'account-profile' slug=reply.creater|users_slug %}">{{reply.creater|users_name}}</a> |  
+											<button style="display: inline;" type="button" class="comment-comment show_replies" data-toggle="modal" data-parent="{{reply.slug}}" data-parentname="{{reply.creater|users_name}}" data-target="#exampleModal" data-whatever="@{{reply.creater}}"> Reply </button> |
+											{{reply.date_time.date}}({{reply.date_time|timesince}} ago) |
+											Replies: {{reply|reply_count}}
+											
+										</footer>
+							</blockquote>
+						</div>
+
+					{% if reply|reply_count %}
+					<button type="button" onclick="cool_function(this)" class="show_replies" id="show_replies_id_{{reply.slug}}" ><small id="show_replies_id_{{reply.slug}}_text">Read all replies</small></button>
+				{% endif %}
+
+					
+					{% include 'snippets/subreplies.html' with comm=reply %}
+					{% endfor %}
+				</div>
+				{% if comment|reply_count %}
+				<button type="button" onclick="cool_function(this)" class="show_replies" id="show_replies_id_{{comment.slug}}" ><small id="show_replies_id_{{comment.slug}}_text">Read all replies</small></button>
+				{% endif %}
+	<hr/>
+	{% endfor %}
+
+
+
+
+</div>
+
+<!-- model -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reply to: </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="." class="form_reply comment-give">{% csrf_token %}
+	          <div class="form-group">
+	            <label for="message-text" class="col-form-label">Comment:</label>
+	            <textarea class="form-control comment-field" id="message-text" name="reply"></textarea>
+	             <input class="parent" id="parent" type="hidden" name="parent">
+	          </div>
+	         
+	        <button type="submit" class="btn btn-primary submit_comment">Send comment</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock cont_ex %}
+
+
+
+{% block javascript %}
+
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		// $('body').popover({selector: '.view_likes', trigger: 'hover'});
+
+
+
+
+		$(".content_re").each(function(){
+			var content = $(this).text()
+			console.log(content)
+			markedContent	=	marked(content)
+			console.log(markedContent)
+			$(this).html(markedContent)
+		})
+
+		$(".content_detail img").each(function(){
+			$(this).addClass("img-responsive")							// images in detail content being adjusted to fit
+		})
+
+
+	$('#exampleModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget) // Button that triggered the modal
+		var pusername = button.data('whatever') // Extract info from data-* attributes
+		var pname = button.data('parentname')
+		console.log('------')
+		console.log(pname)
+		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		var modal = $(this)
+		modal.find('.modal-title').text('Reply to ' + pname + '(' + pusername + ')')
+		var parent = button.data('parent')
+		modal.find('.modal-body parent').val(parent)
+		$(".form_reply").find("input[name=parent]").val(parent)
+		
+	});
+
+	$(".form_reply").submit(function(){
+   // Let's find the input to check
+		   var parent = $(this).find("input[name=parent]");
+
+		});
+
+	// sending ajax requests to comment and reply forms and handeling the errors
+
+	var $myForm = $('.comment-give')
+    $myForm.submit(function(event){
+        event.preventDefault()
+        var $formData = $(this).serialize()
+        var $thisURL = $myForm.attr('data-url') || window.location.href // or set your own url
+        $.ajax({
+            method: "POST",
+            url: $thisURL,
+            data: $formData,
+            success: handleFormSuccess,
+            //error: handleFormError,
+        })
+    })
+    
+
+    function handleFormSuccess(data, textStatus, jqXHR){
+        console.log(data)
+        console.log(textStatus)
+        console.log(jqXHR)
+        $myForm[0].reset(); // reset form data
+    }
+
+    function handleFormError(jqXHR, textStatus, errorThrown){
+        console.log(jqXHR)
+        console.log(textStatus)
+        console.log(errorThrown)
+    }
+
+    
+     $(".submit_comment").attr("disabled", true);
+
+    $(".comment-field").keyup(function() {
+        if($(this).val() != '') {
+           $(".submit_comment").attr('disabled', false);
+        }
+        else{
+        	 $(".submit_comment").attr('disabled', true);
+        }
+     });
+
+
+
+ //    var pre_text;
+	// $(".like-commment-btn").hover(function(){
+	// 	console.log("hovering")
+	// 	// console.log($(this).text())
+		
+	// 	if ( $(this).text().indexOf("Liked") != -1 ){
+	// 			console.log("iffing");
+	// 			$(this).text("Unlike");
+	// 			pre_text = "Liked";
+	// 		} else{
+	// 			console.log("elsing");
+	// 			pre_text = "Like";
+	// 		}
+	// 	}, function(){
+	// 		console.log(pre_text)
+	// 		// $(this).text(pre_text)
+	// 	}
+
+	// )
+
+
+
+
+
+
+
+
+});
+
+	// var liked;
+	// $(".like-commment-btn").hover(function(){
+
+	// 	liked = $(this).attr("data-pre");
+	// 	if (liked == 1){
+	// 		$(this).text("Unlike")
+	// 		}
+
+	// 	}, function(){
+	// 		if (liked == 1){
+	// 		$(this).text("Liked")
+	// 	}
+	// 	}
+	// )
+
+
+
+	$("div[class^='like-text']").on("mouseover", function () {
+    	console.log("sanlaks")
+    	$(this).text("Unlike")
+    })
+
+
+	$(".like-commment-btn").click(function(e){
+		e.preventDefault()
+		this_ = $(this)
+		like_url = this_.attr("data-href")
+		comm_slug = this_.attr("data-slug")
+
+		$.ajax({
+			url: like_url,
+			method: 'GET',
+			data: {},
+			success: function(data){
+				$(".view_likes").popover('dispose')
+				// console.log(data)
+				if (data.liked){
+					count_item = $(".like-count-" + comm_slug)
+					newCount = parseInt(count_item.text()) + 1
+					count_item.text(newCount)
+					$(".like-text-" + comm_slug).text("Unlike")
+
+				} else{
+					count_item = $(".like-count-" + comm_slug)
+					newCount = parseInt(count_item.text()) - 1
+					count_item.text(newCount)
+					$(".like-text-" + comm_slug).text("Like")
+				}
+				console.log(newCount)
+			}
+		})
+
+	})
+
+	$("[id$='repliesall']").hide();
+
+	// function toggle_extra_comments(){
+	// 	console.log('----po');
+	// 	$("#replies").toggle();
+	// 	if ($("#replies").is(":visible")){
+	// 		$("#extra-replies-btn").text('Hide comments');
+	// 	}
+	// 	else{
+	// 		$("#extra-replies-btn").text('Read all comments');
+	// 	}
+	// }
+
+	function cool_function(value){
+		console.log(value.id + '_repliesall')
+		id 		= value.id + '_repliesall'
+		one 	= value.id+ "_1"
+		text 	= value.id+ "_text"
+		$("#" + one).hide()
+		$("#" + id).toggle()
+		if ($("#" + id).is(":visible")){
+			$("#"+text).text('Hide replies');
+		}
+		else{
+			$("#"+text).text('Read all replies');
+		}
+
+		
+
+	}
+
+	$(".view_likes").hover(
+        function(){
+
+        	this_ = $(this);
+        	data_url = this_.attr("data-url")
+        	var liked_users;
+
+        	 $.ajax({
+
+				url: data_url,
+				method: 'GET',
+				data: {},
+				success: function(data){
+					// console.log(data)
+					
+					liked_users = data.liked_users
+					user_links 	= data.user_links
+					
+
+
+
+					var content = ""
+					for(var i=0; i<liked_users.length;i++){
+						content += `<div><a href="${user_links[i]}"> ${liked_users[i]} <a></div>`
+					}
+
+					// console.log(content)
+					if (liked_users.length === 0){
+						content = "<div class='text-monospace' >No likes</div>"
+					}
+
+					var options = {
+			        		title: `Liked by ${liked_users.length}`,
+			        		content: content,
+			        		// container: '#popup_thing',
+			        		html: true
+			        	}
+
+			        console.log(options)
+
+        			this_.popover(options);
+        			 
+        			// this_.popover("show"); 
+				}
+
+			})
+	
+        	
+    }, )
+
+	</script>
+
+{% endblock javascript %}
+

@@ -1,0 +1,61 @@
+<style type="text/css">
+	.form_re{
+		padding-left: 30%;
+		padding-right: 30%;
+	}
+	.heading_re{
+		text-align: center;
+		color: grey;
+		font-size: 53px !important;
+	}
+  .custom-file-input{
+    cursor: pointer;
+  }
+</style>
+
+{% extends 'base.html' %}
+
+
+{{form.errors}}
+
+{% block cont_ex %}
+{% load crispy_forms_tags %}
+
+<div class="lead heading_re">Image Host</div><br/><br/>
+
+
+<div class="form_re">
+<form class="needs-validation" method="POST" action="." enctype="multipart/form-data">{% csrf_token %}
+ 
+    <div class="Name">
+      <label for="validationCustom01">What's in this Image</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="(Optional)" name="name">
+    </div><br/>
+     
+     <div class="custom-file">
+   	 	<input type="file" class="custom-file-input" id="inputGroupFile02" name="image" id="uploaded_image" required>
+    	<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+  	 </div><br/>
+
+ 
+  <br/><button class="btn btn-outline-primary" type="submit">Submit form</button>
+</form>
+</div>
+
+
+
+
+<br/><br/><br/><br/>
+
+{% endblock %}
+
+{% block javascript %}
+
+<script type="text/javascript">
+	$('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.custom-file-label').html(fileName);
+    });
+</script>
+
+{% endblock javascript %}

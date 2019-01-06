@@ -1,0 +1,23 @@
+{% load blog_filters %}
+
+						 
+<div class="replies" id="show_replies_id_{{comm.slug}}_repliesall">
+	{% for comment in comm|get_comm_replies %}
+		<div class="each-reply">
+			<blockquote class="lead">
+				<p> {{comment.content|linebreaks}} </p>
+						<footer class="blockquote-footer">
+							<a href="{% url 'account-profile' slug=comment.creater|users_slug %}">{{comment.creater|users_name|title}}</a> | 
+							<button style="display: inline;" type="button" class="comment-comment show_replies" data-parent_name={{comment.creater|users_name}} data-toggle="modal" data-parent="{{comment.slug}}" data-target="#exampleModal" data-whatever="@{{comment.creater}}"> Reply </button> |
+							{{comment.date_time|timesince}} ago |
+							Replies: {{comment|reply_count}}
+						</footer>
+			</blockquote>
+		</div>
+		{% include 'snippets/subreplies.html' with comm=comment %}
+		{% if comment|reply_count %}
+		<button type="button" onclick="cool_function(this)" class="show_replies" id="show_replies_id_{{comment.slug}}" ><small id="show_replies_id_{{comment.slug}}_text">Read replies</small></button>
+		{% endif %}
+	{% endfor %}
+</div>
+

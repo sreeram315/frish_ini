@@ -1,0 +1,92 @@
+
+<div class="nav_centre">
+<nav class="nav_bar">
+	<div class='nav_home ' style="text-align: center;">
+		<a href="{% url 'home' %}">Home </a>|
+		<a href="{% url 'contact' %}">Contact </a>|
+		<a href="{% url 'about' %}">About </a>
+
+		
+
+		| <a href="{% url 'students-list'  reg_id='' %}">Student list </a> 
+		| <a href="/accounts/account-list/?q=">Users </a>
+		| <a href="{% url 'twitter-home' %}">Twitter </a>
+		| <a href="{% url 'counter-create' %}">Counter</a>
+		| <a href="{% url 'shortenurl-create' %}">Shorten Url</a>
+		| <a href="{% url 'blog-home' %}">Blog</a>
+		| <a href="{% url 'imagehost-create' %}">Image Host</a>
+			
+			
+		
+
+
+		<div class="animation	
+			{% if 'students' in request.get_full_path %}
+				start-students-list
+			{% elif 'contact' in request.get_full_path %}
+				start-contact
+			{% elif 'about' in request.get_full_path|slice:":10" %}
+				start-about
+			{% elif 'accounts' in request.get_full_path %}
+				start-acoounts-list
+			{% elif 'twitter' in request.get_full_path %}
+				start-twitter-home
+			{% elif 'counter' in request.get_full_path %}
+				start-counter-create
+			{% elif 'shortenurl' in request.get_full_path %}
+				start-shortenurl-create
+			{% elif 'blog' in request.get_full_path %}
+				start-blog-home
+			{% elif 'imagehost' in request.get_full_path %}
+				start-imagehost-create
+			{% else %}
+				start-home
+			{% endif %}
+			">
+		</div>
+	</div>
+</nav>
+</div>
+{% if request.user.is_authenticated %}
+
+<div  style="text-align: right; padding-right: 70px;"> Logged in as: <a href = '/accounts/profile/'><b>
+		{% if request.user.name %}
+			{{ request.user.name }} 
+		{% elif request.user.email %}
+			{{request.user.email}}
+		{% elif request.user.username %}
+			{{request.user.username}}
+		{% else %}
+			big error contact administrator
+		{% endif %}</b></a>
+</div>
+
+
+<div  style="text-align: right; padding-right: 70px; font-size: 15px">
+	<a href = "{% url 'logout' %}">logout </a>
+</div>
+
+
+{% else %}
+	
+</nav>
+
+	{% if request.get_full_path != "/login/"  and  request.get_full_path != "/accounts/register/" %}
+	<div  style="text-align: right; padding-right: 70px;"><a href="{% url 'login' %}"> Login </a> or <a href = "{% url 'account-register' %}">Register</a>
+	</div>
+	{% endif %}
+
+{% endif %}
+	
+
+
+
+
+
+
+
+
+
+
+
+

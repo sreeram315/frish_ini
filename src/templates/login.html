@@ -1,0 +1,76 @@
+<style type="text/css">
+.text_input {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.submit {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+
+
+</style>
+
+{% extends 'base.html' %}
+
+
+{% block cont_ex %}
+
+
+<br/><br/>
+{% if 'next' in request.get_full_path %}
+<div style="text-align: center;color: red">Please login or <a href="{% url 'account-register' %}">register</a> to continue</div>
+{% else %}
+<div style="text-align: center;color: grey;">New here? <a href="{% url 'account-register' %}">Register</a> now, It's free!
+{% endif %}
+
+<br/>
+
+<form method="POST" style="text-align: center;" action="{% url 'login' %}">{% csrf_token %}
+
+<div style="text-align: center;color: grey; font-size: 70px; font-family: Arial">sign in</div><br/><br/>
+Username: <input type="text" name="username" class="text_input"><br/>
+Password: <input type="password" name="password" class="text_input"><br/><br/>
+<button type="submit" class="btn btn-primary">login</button>
+</form>
+
+
+{% endblock cont_ex %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<style type="text/css">
+ 
+.formm{
+	text-align: left;
+	padding-left: 10%;
+	padding-right: 60%;
+}
+.heading{
+	padding-left: 10%;
+	color: grey;
+}
+
+
+  
+ </style>
+
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block cont_ex %}
+
+
+<a id="view_likes" data-toggle="popover" data-placement="top" data-content="This is the same page bewakoof">hello</a>
+
+
+{% endblock cont_ex %}
+
+{% block javascript %}
+
+
+<script type="text/javascript">
+    $("#view_likes").click(
+        function(){
+        $(this).popover('toggle');
+    })
+</script>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

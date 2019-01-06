@@ -1,0 +1,54 @@
+<style type="text/css">
+.text_input {
+  width: 24%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.submit {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+
+
+
+</style>
+{% extends 'base.html' %}
+{% block head_name %} Counter || SRM {% endblock head_name %}
+
+
+{% block cont_ex %}
+<form method = "POST">{% csrf_token %}
+
+<br/>
+<h1 style="color: grey; text-align: center;"> Create Counter: </h1><br/><br/>
+{% if form.errors %}
+<div style="color: maroon; text-align: left">
+	{{form.errors}}
+{% endif %}
+</div>
+<br/>
+<div style="text-align: center;" >
+
+	Creater:	&ensp;  <input type="text" name="creater" class="text_input" placeholder="optional"><br/>
+	Name*:    &ensp; 	<input type="text" name="name" class="text_input"><br/><br/>
+	<button type="submit"  class="btn btn-primary">Submit</button>
+
+</div>
+</form>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+{% endblock cont_ex %}

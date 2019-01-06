@@ -1,0 +1,1095 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"con",
+				"console"
+			],
+			[
+				"acc",
+				"acc_obj"
+			],
+			[
+				"get",
+				"get_absolute_url"
+			],
+			[
+				"like",
+				"liked_users"
+			],
+			[
+				"lik",
+				"liked_users"
+			],
+			[
+				"coun",
+				"count_item"
+			],
+			[
+				"bl",
+				"blog"
+			],
+			[
+				"data",
+				"data-href"
+			],
+			[
+				"re",
+				"rest_framework"
+			],
+			[
+				"A",
+				"APIView"
+			],
+			[
+				"Stude",
+				"StudentCreateSerializer"
+			],
+			[
+				"Http",
+				"HttpResponseRedirect"
+			],
+			[
+				"pad",
+				"padding-right\tproperty"
+			],
+			[
+				"clea",
+				"cleaned_data"
+			],
+			[
+				"pa",
+				"padding-left\tproperty"
+			],
+			[
+				"form",
+				"form_class"
+			],
+			[
+				"HT",
+				"HTTP_400_BAD_REQUEST"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"ser",
+				"serializer"
+			],
+			[
+				"va",
+				"validated_data"
+			],
+			[
+				"ema",
+				"email"
+			],
+			[
+				"em",
+				"email_1"
+			],
+			[
+				"email",
+				"email_1"
+			],
+			[
+				"eam",
+				"email_1"
+			],
+			[
+				"ima",
+				"image_url"
+			],
+			[
+				"gen",
+				"gender"
+			],
+			[
+				"blo",
+				"blog_slug"
+			],
+			[
+				"pare",
+				"parent"
+			],
+			[
+				"align",
+				"align-items\tproperty"
+			],
+			[
+				"Te",
+				"TemplateView"
+			],
+			[
+				"Is",
+				"IsAdminUser"
+			],
+			[
+				"to",
+				"toggle"
+			],
+			[
+				"show",
+				"show_replies"
+			],
+			[
+				"padd",
+				"padding-left\tproperty"
+			],
+			[
+				"comme",
+				"comment"
+			],
+			[
+				"block",
+				"blockquote"
+			],
+			[
+				"max",
+				"max-height\tproperty"
+			],
+			[
+				"im",
+				"imagehost"
+			],
+			[
+				"te",
+				"template_name"
+			],
+			[
+				"IMa",
+				"ImageHostInfo"
+			],
+			[
+				"ali",
+				"text-align\tproperty"
+			],
+			[
+				"alig",
+				"text-align\tproperty"
+			],
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"Blog",
+				"BlogInfo"
+			],
+			[
+				"colo",
+				"color\tproperty"
+			],
+			[
+				"color",
+				"color-interpolation\tproperty"
+			],
+			[
+				"use",
+				"used_editor"
+			],
+			[
+				"ma",
+				"markedContent"
+			],
+			[
+				"marke",
+				"marked"
+			],
+			[
+				"mar",
+				"marked"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"col",
+				"col-sm-6"
+			],
+			[
+				"siz",
+				"font-size\tproperty"
+			],
+			[
+				"mark",
+				"mark_safe"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"dat",
+				"date_time"
+			],
+			[
+				"crea",
+				"creater"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"bu",
+				"button-like"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"com",
+				"comment"
+			],
+			[
+				"comm",
+				"comments"
+			],
+			[
+				"ge",
+				"genre"
+			],
+			[
+				"algn",
+				"text-align\tproperty"
+			],
+			[
+				"paddi",
+				"padding-bottom\tproperty"
+			],
+			[
+				"padding",
+				"padding-right\tproperty"
+			],
+			[
+				"tex",
+				"text_input"
+			],
+			[
+				"gende",
+				"gender_select"
+			],
+			[
+				"orde",
+				"order_by"
+			],
+			[
+				"sele",
+				"state_select"
+			],
+			[
+				"state",
+				"state_select"
+			],
+			[
+				"sort",
+				"sort_by"
+			],
+			[
+				"sor",
+				"sort_by"
+			],
+			[
+				"font",
+				"font-family\tproperty"
+			],
+			[
+				"file",
+				"file_name"
+			],
+			[
+				"uplo",
+				"uploaded_file"
+			],
+			[
+				"red",
+				"redirection_link"
+			],
+			[
+				"r",
+				"rlink"
+			],
+			[
+				"True",
+				"True"
+			],
+			[
+				"acti",
+				"activation_key"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"c",
+				"counter_r"
+			],
+			[
+				"cou",
+				"counter_r"
+			],
+			[
+				"pre",
+				"previous_value"
+			],
+			[
+				"co",
+				"counter"
+			],
+			[
+				"Crea",
+				"CreateCounterForm"
+			],
+			[
+				"pas",
+				"pass1"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"auth",
+				"authenticate"
+			],
+			[
+				"Ce",
+				"CreateView"
+			],
+			[
+				"size",
+				"font-size\tproperty"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"fo",
+				"following"
+			],
+			[
+				"last",
+				"last_num"
+			],
+			[
+				"Twitter",
+				"TwitterInfo"
+			],
+			[
+				"AccountInfo",
+				"AccountInfoManagaer"
+			],
+			[
+				"left",
+				"padding-left\tproperty"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"pr",
+				"profile"
+			],
+			[
+				"pro",
+				"prof_1"
+			],
+			[
+				"AC",
+				"AccountInfo"
+			],
+			[
+				"get_object",
+				"get_object_or_404"
+			],
+			[
+				"reg",
+				"reg_no"
+			],
+			[
+				"ob",
+				"objects"
+			],
+			[
+				"sea",
+				"search_query"
+			],
+			[
+				"Acc",
+				"AccountInfo"
+			],
+			[
+				"lef",
+				"padding-left\tproperty"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"add",
+				"address"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"Student",
+				"StudentInfo"
+			],
+			[
+				"su",
+				"success_url"
+			],
+			[
+				"li",
+				"students_list"
+			],
+			[
+				"StudentAdd",
+				"StudentAddForm"
+			],
+			[
+				"Stu",
+				"StudentAdd"
+			],
+			[
+				"DE",
+				"description"
+			],
+			[
+				"Stuen",
+				"StudentInfo"
+			],
+			[
+				"get_",
+				"get_context_data"
+			],
+			[
+				"students",
+				"students_list"
+			],
+			[
+				"mat",
+				"mat_T"
+			],
+			[
+				"po",
+				"post_order"
+			],
+			[
+				"vis",
+				"visits"
+			],
+			[
+				"no",
+				"no_of_vertices"
+			],
+			[
+				"no_",
+				"no_of_vertices"
+			],
+			[
+				"f",
+				"findall"
+			],
+			[
+				"df",
+				"df_count"
+			],
+			[
+				"lis",
+				"listexponents"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/templates/blog/detail.html",
+			"settings":
+			{
+				"buffer_size": 15383,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/.gitignore",
+			"settings":
+			{
+				"buffer_size": 65,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/templates/tester.html",
+			"settings":
+			{
+				"buffer_size": 597,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/blog/models.py",
+			"settings":
+			{
+				"buffer_size": 4102,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/blog/views.py",
+			"settings":
+			{
+				"buffer_size": 5712,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/blog/urls.py",
+			"settings":
+			{
+				"buffer_size": 886,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/sreerammaram/Desktop/django/frish",
+		"/Users/sreerammaram/Desktop/django/frish/src",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/api",
+		"/Users/sreerammaram/Desktop/django/frish/src/data",
+		"/Users/sreerammaram/Desktop/django/frish/src/data/imagehost_pictures",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/settings",
+		"/Users/sreerammaram/Desktop/django/frish/src/students",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/api",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/accounts",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/blog",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/twitter"
+	],
+	"file_history":
+	[
+		"/Users/sreerammaram/Desktop/django/frish/src/students/models.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/settings/base.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/accounts/register.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/api/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/twitter/home.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/api/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/api/paginators.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/api/serializers.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/detail_view.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/base.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/mixins.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/js.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/css.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/tester.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/nav_home.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/api/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/api/serializers.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/api/__init__.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/forms.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/twitter/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/api/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/models.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/api/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/templatetags/blog_filters.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/blog/home.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/blog/create.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/api/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/api/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/api/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/subreplies.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/imagehost/create.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/models.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/api/serializers.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/api/__init__.py",
+		"/Users/sreerammaram/Desktop/ece191 2/eclipse_work_space/stu_data/src/Data.java",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/api/serializers.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/api/__init__.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/settings/local2.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/api/permissions.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/api/__init__.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/css/demo.css",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/blog/update.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/blog/detail.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/models.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/looper.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/blog/detail_test.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/imagehost/utils.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/imagehost/admin.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/imagehost/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/list_view.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/imagehost/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/imagehost/detail.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/imagehost/models.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/imagehost/forms.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/blog/extra-replies.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/detail_view_test.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/search.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/validators.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/forms.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/admin.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/users/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/home.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/contact.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/about.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/blog/templatetags/__init__.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/counter/create.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/shortenurl/create.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/css/checkbox.css",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/counter/result_view.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/counter/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/login.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/accounts/open_prof_view.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/accounts/profile.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/accounts/follow_form.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/accounts/list_view.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/views.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/forms.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/new_entry.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/footer.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/accounts/update_form.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/upload_stu_data.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/update.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/tests.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/admin.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/admin.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/apps.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/utils.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/forms.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/add_new.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/form.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/old_settings.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/accounts/utils.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/twitter/admin.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/twitter/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/snippets/accounts/account-search-form.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/db.sqlite3",
+		"/Users/sreerammaram/Desktop/django/frish/src/twitter/models.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/twitter/forms.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/twitter/new-tweet.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/twitter/utils.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/counter/forms.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/wsgi.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/registration/login.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/accounts/form.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/counter/models.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/counter/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/admin.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/shortenurl/urls.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/shortenurl/success.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/counter/admin.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/students/utils.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/settings/local.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/settings/production.py",
+		"/Users/sreerammaram/Desktop/django/frish/src/requirements.txt",
+		"/Users/sreerammaram/Desktop/django/frish/src/frish/settings/__init__.py",
+		"/Users/sreerammaram/Desktop/django/try-django-19/trydjango19.sublime-project",
+		"/Users/sreerammaram/Desktop/django/frish/src/templates/students/upload_details.html",
+		"/Users/sreerammaram/Desktop/django/frish/src/users/urls.py",
+		"/Users/sreerammaram/Desktop/ECE191/lpu_records/5kto7k_boys_data.txt",
+		"/Users/sreerammaram/Desktop/ECE191/lpu_records/taking_boys_ids.py",
+		"/Users/sreerammaram/Desktop/Py/bits.py"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			"/Users/sreerammaram/Desktop/django/frish/src",
+			"/Users/sreerammaram/Desktop/django/frish/src/templates/students/list_view.html",
+			"/Users/sreerammaram/Desktop/django/frish/src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"reverse",
+			"rever",
+			"ajax",
+			"get",
+			"ajax",
+			"toggle_samepage_message",
+			"Liked",
+			"comment-give",
+			"form",
+			"myForm",
+			"comment-give",
+			"BASE_DIR",
+			"update",
+			"blogs",
+			"user",
+			"replies",
+			"user",
+			"View all",
+			"modal-title",
+			"exampleModalLabel",
+			".modal-title",
+			"box",
+			"blue",
+			"pp",
+			"\t\t\t<!--",
+			"by",
+			"open",
+			"account-openprofile",
+			"open",
+			"account-openprofile",
+			"open",
+			"css",
+			"{{order_by}}",
+			"int",
+			"Nma",
+			"re",
+			"send_activation_email",
+			"title",
+			"Owned"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"order_by"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/templates/blog/detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15383,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13247,
+								13247
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9070.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/.gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 65,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								65,
+								65
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/templates/tester.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 597,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								549,
+								464
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 92.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/blog/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								182
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/blog/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5712,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5088,
+								5088
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2202.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/blog/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 886,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								759,
+								783
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "frish.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

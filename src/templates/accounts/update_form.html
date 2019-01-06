@@ -1,0 +1,121 @@
+<style>
+/* In add-new.html */
+
+.text_input {
+  width: 27%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.submit {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+/*////	/////	////*/
+</style>
+
+
+{% extends 'base.html' %}
+
+
+<!-- header name  -->
+{% block head_name %}{{ title }}: {{ object.username.upper }} || SRM {% endblock head_name %}			
+
+
+<!-- main block -->
+
+{% block cont_ex %}<br/>
+
+
+
+{% if request.user == object.owner %}
+
+
+
+<form method = "POST">{% csrf_token %}<br/>
+
+
+	<h1 style="color: solid grey; text-align: center;"> Update Account Info </h1>	<br/><br/>
+{% if form.errors %}
+	<div style="color: maroon; text-align: left"></div>
+		{{form.errors}}
+{% endif %}<br/>
+
+
+<div style="text-align: center;">
+
+	<input type="text" name="name" class="text_input" placeholder="Name" 
+	value="{% if object.name %} {{object.name}} {% endif %}"><br/>
+
+	<input type="text" name="email" class="text_input" placeholder="Email" 
+	value="{% if object.email %} {{object.email}} {% endif %}"><br/>
+
+	<input type="text" name="dob" class="text_input" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" placeholder="Date of Birth" value="{% if object.dob %} {{object.dob}} {% endif %}" ><br/>
+
+	<input type="text" name="contact" class="text_input" placeholder="Contact" value="{% if object.contact %} {{object.contact}} {% endif %}"><br/>
+
+	<textarea type="text" name="address" class="text_input" placeholder="Address (optional)"
+	 value="{% if object.address %} {{object.address}} {% endif %}"></textarea><br/>
+
+	<input type="text" name="slug" class="text_input" placeholder="Slug (optional)" 
+	value="{% if object.slug %} {{object.slug}} {% endif %}"><br/>
+
+	<input type="text" name="description" class="text_input" placeholder="Description(optional)" 
+	value="{% if object.description %} {{object.description}} {% endif %}"><br/><br/>
+
+	<button type="submit"  class="btn btn-primary">
+		Submit
+	</button>
+
+</div>
+</form>
+
+
+
+
+{% else %}
+<div style="text-align: center;">
+	<h3 style="color: red;"><br/><br/><br/>NOT YOUR PROPERTY</h3><br/><br/><br/>
+	Owned by user: <b>{{ object.owner }}</b><br/>
+	You are: <b> {{ request.user }}</b><br/>
+</div>
+
+{% 	endif %}
+
+{% endblock cont_ex %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+<style type="text/css">
+.text_input {
+  width: 28%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.submit {
+  border-radius: 30%;
+  width: 15%;
+  background-color: darkblue;
+  color: white;
+  padding: 14px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: blue;
+}
+.form_stu_entry{
+  
+}
+</style>
+
+
+
+
+
+{% extends 'base.html' %}
+{% block head_name %} Accounts || SRM {% endblock head_name %}
+
+{% block cont_ex %}
+<br/>
+{% if form.errors %}
+<div style="color: maroon; text-align: left">
+	{{form.errors}}
+</div>
+{% endif %}
+<br/>
+<h3 style="text-align: center;color: red">Register an account <a href="{% url 'login' %}"><div style="color: grey; display: inline; font-size: 14; opacity: 0.7">or login</div></a></h3>
+
+<br/><br/><br/>
+
+
+<div style="text-align: center;">
+<form class="form_stu_entry" method = "POST" > {% csrf_token %}
+	<input type="text" placeholder="Choose a username" name = "username" class="text_input" value="{{request.POST.username}}"><br/>
+	<input type="text" placeholder="Active email" name = "email" class="text_input" value="{{request.POST.email}}"><br/>
+	<input type="password" placeholder="Choose a  password" name = "pass1" class="text_input" value="{{request.POST.pass1}}"><br/>
+	<input type="password" placeholder="Confirm password" name = "pass2" class="text_input" value="{{request.POST.pass2}}"><br/>
+	<button class="submit" type="submit">Sign up</button>
+</form>
+</div>
+
+
+
+
+{% endblock cont_ex %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

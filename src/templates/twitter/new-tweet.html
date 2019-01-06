@@ -1,0 +1,95 @@
+<style>
+/* In add-new.html */
+ input[type=text] {
+    width: 20%;
+    padding-left: 60px;
+    margin: 8px 0;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.text_input {
+  width: 24%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.submit {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+</style>
+
+
+{% extends 'base.html' %}
+
+
+<!-- header name  -->
+{% block head_name %}New Tweet || Twitter {% endblock head_name %}			
+
+
+<!-- main block -->
+
+{% block cont_ex %}
+
+
+<form method = "POST">{% csrf_token %}
+<br/>
+
+<h1 style="color: grey; text-align: center;"> {{ title }} </h1><br/><br/>
+
+{% if form.errors %}
+<div style="color: maroon; text-align: left">
+	{{form.errors}}
+{% endif %}
+
+	</div><br/>
+	
+		<div style="text-align: center;" >
+
+			<textarea name="content" class="text_input" placeholder="Content" rows="6" cols="70"></textarea><br/>
+			
+
+			<button type="submit"  class="btn btn-primary">Tweet</button>
+	</div>
+
+</form>
+
+
+
+
+{% endblock cont_ex %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

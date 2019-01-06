@@ -1,0 +1,340 @@
+
+<style type="text/css">
+
+.wmd-input{
+
+}
+
+.pimageincontent{
+  max-height: 10%;
+  max-width: 100%;
+}
+
+.content_re, .content{
+    padding-top: 43px;
+    padding-left: 1%;
+    padding-right: 15%;
+    padding-bottom: 5%;
+      font-family: arial;
+      color: #353535;
+
+  }
+.headline{
+    font-family: Times New Roman;
+    font-size: 42px;
+    color: #336699;
+    padding-left: 1%;
+    padding-right: 15%;
+
+  }
+.text_input {
+  width: 97%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.submit {
+  width: 53%;
+  background-color: blue;
+  color: white;
+  padding: 14px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: red;
+}
+
+.form_re{
+  text-align: center;
+  padding-left: 2%;
+}
+
+select{
+	width: 30%;
+	color: black;
+}
+
+.title_re{
+  color: grey;
+  text-align: center;
+  font-size: 46;
+}
+
+.preview_head{
+  text-align: center;
+  font-family: arial;
+  color: grey;
+  font-size: 42;
+}
+.content::first-letter{
+    padding-left: 3%;
+    font-size: 48;
+    font-family: Times New Roman;
+}
+.ppreview_points{
+    padding-left: 5%;
+    padding-right: 15%;
+    opacity: 0.8;
+    font-family: WildWest;
+    font-size: 22;
+  }
+.text_input:hover{
+  cursor: default;
+}
+
+
+
+
+
+
+</style>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head_name %} Blog || SRM {% endblock head_name %}
+{% block extra %} {{ form.media }} {% endblock extra %}
+
+
+{% block cont_ex %}
+<br/>
+
+{% if form.errors %}
+  {{ form.errors }}
+  {% else %}
+{% endif %}
+
+
+<div class="row">
+
+<div class="col-sm-6">
+    <div class="form_re">
+        <div class="title_re">New Blog</div><hr/>
+        <form method="POST" action="." enctype="multipart/form-data" name="form_re">{% csrf_token %}
+
+          
+          <input type="text" class="text_input" name="headline" id="id_headline" placeholder="Headline"><br/>
+
+          <textarea type="text" class="text_input" name="preview_points" id="id_preview_points" placeholder="Preview Points (seperate by newline (enter key)   )"></textarea><br/>
+
+          
+          <input type="file" name="image" class="text_input" placeholder="Image(if any)" id="id_image" placeholder="Image"><br/>
+
+          Use Editor? 
+          <input type="checkbox" name="use_editor" class="" placeholder="use_editor" id="id_use_editor" checked ><br/><br/>
+
+          
+            {{ form.content }}{{form.content.errors}}
+
+            
+
+            <textarea class="text_input" id="id_ocontent" placeholder="Content" name="ocontent" rows="12"></textarea>
+          
+
+          Age restricted? 
+          <input type="checkbox" name="age_restricted" class="" placeholder="age_restricted" id="id_age_restricted"><br/><br/>
+
+          {{ form.genre }}<br/><br/>
+
+          <button type="submit" class="submit">Publish</button>
+        </form>
+
+    </div>
+</div>
+
+<div class="col-sm-6">
+  <div class="preview_head">
+      Preview
+  </div><hr/>
+    <div style="color: grey; text-align: right; padding-right: 3%" id="id_pgenre">NEWS</div>
+  <div class="headline" id="id_pheadline">[ Headline here ]</div>
+
+      <div style="text-align: right; padding-right: 3%;" id="id_ppage_restricted">
+        <div style="color: red; display: inline; text-align: right;"> WARNING:</div> Age restricted
+      </div>
+  
+  <div class="ppreview_points" id="id_ppreview_points">[ Preview points ]</div>
+
+  <div class="content" id="id_pcontent">[ content here ]</div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock cont_ex %}
+
+
+
+
+
+
+
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+      //content preview in crate blog
+
+  $(document).ready(function(){ 
+    $("#id_ocontent").hide();
+
+    var use_editorItem = $("#id_use_editor");             // use editor
+    use_editorItem.change(function(){
+      if($(this).is(":checked")) {
+              console.log('on');
+              $("#id_ocontent").hide();
+              $("#id_content").show();
+
+              var markedContent = marked($("#id_content").val());  
+              $("#id_pcontent").html(markedContent);                      // dinamic content
+              $("#id_pcontent img").each(function(){
+              $(this).addClass("pimageincontent");                    // images in detail content being adjusted to fit
+           })
+          }
+          else{
+            console.log('off');
+            $("#id_content").hide();
+            $("#id_ocontent").show();
+
+            var markedContent = marked($("#id_ocontent").val());  
+            $("#id_pcontent").html(markedContent);                      // dinamic content
+            $("#id_pcontent img").each(function(){
+            $(this).addClass("pimageincontent");                    // images in detail content being adjusted to fit
+           })
+          }
+      
+    })
+
+
+    var genreItem = $("#id_genre");                 // dinamic genre
+    genreItem.change(function(){
+      $("#id_pgenre").text(genreItem.val());
+      
+    })
+
+
+
+    $("#id_ppage_restricted").hide(); //initial
+    var age_restrict = $("#id_age_restricted");             // age restriction
+    age_restrict.change(function(){
+      if($(this).is(":checked")) {
+        $("#id_ppage_restricted").show();
+          }
+          else{
+            $("#id_ppage_restricted").hide();
+          }
+      
+    })
+
+
+    var headlineItem = $("#id_headline");                 // dinamic headline
+    function setTitle(value){
+      $("#id_pheadline").text(value);
+    }
+    headlineItem.keyup(function(){
+      setTitle($(this).val());
+      
+    })
+
+    
+
+    function setContent(value){
+      var markedContent = marked(value);  
+      $("#id_pcontent").html(markedContent);                      // dinamic content
+      $("#id_pcontent img").each(function(){
+        $(this).addClass("pimageincontent");                    // images in detail content being adjusted to fit
+      })
+    }
+    $("#id_content").keyup(function(){
+      setContent($(this).val());
+    })
+    $("#id_ocontent").keyup(function(){
+      setContent($(this).val());
+    })
+
+
+
+    var ppItem = $("#id_preview_points");                   // dinamic preview points
+    function setpp(value){
+      if (value.length==0){
+        $("#id_ppreview_points").empty();
+      }
+      else{
+        points = value.split("\n");
+        if(points.length>3){ $("#id_ppreview_points").text("Preview points cannot be more than 3, please delete the remaining");}
+        else{
+        $("#id_ppreview_points").html("<ul id='newList'></ul>");
+        for( var i=0; i< points.length; i++){
+        $("#id_ppreview_points").append("<li>"+points[i]+"</li>");
+        }}
+      }
+    }
+    ppItem.keyup(function(){
+      setpp($(this).val());
+    })
+
+  })
+
+</script>
+
+
+
+{% endblock javascript %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

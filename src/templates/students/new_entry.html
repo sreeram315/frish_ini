@@ -1,0 +1,94 @@
+<style type="text/css">
+.form_re{
+	padding-left: 30%;
+	padding-right: 30%;
+	padding-bottom: 5%;
+}
+.widthy{
+	width: 100%;
+}
+.address{
+	
+}
+</style>
+
+
+{% extends 'base.html' %}
+
+<!-- header name  -->
+{% block head_name %}New Student Entry || SRM {% endblock head_name %}			
+
+
+<!-- main block -->
+
+{% block cont_ex %}<br/>
+{% load crispy_forms_tags %}
+
+
+
+
+<h1 style="text-align: center; color: grey;">{{ title }}</h1><br/>
+
+
+
+<div class="form_re">
+		<form method="POST">{% csrf_token %}
+		<div class="row">
+			<div class="name widthy">
+				{{form.name|as_crispy_field}}
+			</div>
+			<div class="reg_no widthy">
+				{{form.reg_no|as_crispy_field}}
+			</div>
+			<div class="dob widthy">
+				{{form.dob|as_crispy_field}}
+			</div>
+			<div class="section widthy">
+				{{form.section|as_crispy_field}}
+			</div>
+			<div class="contact widthy">
+				{{form.contact|as_crispy_field}}
+			</div>
+			<div class="batch widthy">
+				{{form.batch|as_crispy_field}}
+			</div>
+			<div class="address widthy">
+				{{form.address|as_crispy_field}}
+			</div>
+			<div class="department widthy">
+				{{form.department|as_crispy_field}}
+			</div>
+			<div class="description widthy">
+				{{form.description|as_crispy_field}}
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary button_re"> Update</button>
+	</form>
+</div>
+
+
+{% endblock cont_ex %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
